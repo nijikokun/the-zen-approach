@@ -9,7 +9,7 @@ I'm slowly learning how to be one however. In the beginning, I was rigid, like t
 
 *I've learned that thinking like this is __extremely wrong__ on __multiple__ levels.*
 
-Unlike me, JavaScript is more like the branches of the tree. It sways whatever way the wind blows. It goes with the flow; It does not really care how aesthetically please you wish to make it. It gives you the flexibility that you need, and if you bend too far it breaks.
+Unlike me, JavaScript is more like the branches of the tree. It sways whatever way the wind blows. It goes with the flow; It does not really care how aesthetically pleasing you wish to make it. It gives you the flexibility that you need, and if you bend too far it breaks.
 
 Being the trunk, you will always be underneath that flexibility. You have yet to understand and experience liberation. Even those branches are not liberated, the wind, that's the liberation you should strive for. The real flow. It doesn't even know the branches are there; but it moves them to it's will, not just this tree but any tree.
 
