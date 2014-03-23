@@ -349,10 +349,11 @@ This only applies in my preference to un-assigned.
 
 ### Other Styles
 
-The first, is a common, in my opinion somewhat harder to scan list, when you are looking at it inside of code contextually; Without context it looks nice. The gap in the beginning causes visual problems for me personally when I start a block after it. Nesting and heirarchy get lost.
+The first, commonly used, tends to be hard to read and scan when you view it inside of code contextually; Without context it looks alright. The gap between the line-numbers, and the variable can cause visual problems for scanning when code comes immediately after starting on the same vertical rhythm that `var` is on. Nesting and heirarchy get lost.
 
 ```javascript
 // Single var statement, multiple variables, comma after, columnized.
+// Loss of vertical rhythm.
 
 var one = 1,
     two = 2,
@@ -362,11 +363,14 @@ var one = 1,
     six;
 ```
 
-The following block makes a little more sense, however it can be problematic with linting, and engines. Notably older ones. It gives you more of a visual seperation but you still lose sight of it quickly when inside context. Nesting and Heirarchy gets lost fast, just like the previous.
+The next example, more commonly used in two-space code, while being cleaner and slightly easier to read provides new problems. Linting, and older engines may insert semicolons or check for trailing commas, which will throw errors here. Not only that, you still lose your vertical rhythm when viewing this block inside of code contextually.
+
+I myself enjoyed this block for a year or two, now I avoid it like the plague.
 
 ```javascript
 // Single var statement, multiple variables, comma before.
 // Can cause problems in some situations.
+// Loss of vertical rhythm.
 
 var one = 1
   , two = 2
@@ -376,7 +380,8 @@ var one = 1
   , six;
 ```
 
-There is also the single line, this is just hard to read after a certain point so I will skip it. Nobody really uses it, except short un-assigned lists.
+There is also the single line, this is just hard to read after a certain point so I will skip it. 
+Nobody really uses it, if used, should only be for short un-assigned lists.
 
 ## Todo
 
