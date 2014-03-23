@@ -1,7 +1,37 @@
 # The Zen Approach
 #### *By Nijiko Yonskai*
 
-#### Preface
+
+
+## Table of Contents
+
+1. [Freface](#foreword)
+2. [General Tips](#general-tips)
+3. [Whitespace](#whitespace)
+	1. [Tabs and Spaces](#tabs-and-spaces)
+	2. [Line Length](#line-length)
+	3. [Code](#code)
+		1. Assignment
+		2. Functions
+		3. Objects
+		4. Arrays
+4. [Natives](#natives)
+5. [Primitives](#primitives)
+	1. [Simple](#simple)
+	2. [Complex](#complex)
+6. [Objects](#objects)
+   1. [Notation](#notation)
+7. [Arrays](#arrays)
+   1. [Cloning](#cloning)
+8. [Strings](#strings)
+   1. [Multiline](#multiline)
+9. [Variables](#variables)
+   1. [Other Styles](#other-styles)
+10. [TODO](#todo)
+	
+===
+
+### Foreword
 
 I'm no Zen Master.
 
@@ -33,41 +63,48 @@ After working so closely with this language, JavaScript, for so many years (goin
 5. No trailing commas in lists or dictionaries (hash).
 6. Use semi-colons, if only for your sanity.
 
-===
 
-### Natives
+## Whitespace
 
-Do not extend them, in the end you will only find trouble. This path is narrow and crumbles beneath the feet quickly. Use caution when treading.
+Balance between code and space, offers much insight, however through many battles do we gain any knowledge.
 
-* I myself, many times before, have done this. I've learned from my mistakes that not everyone follows the age old rule of checking `hasOwnProperty` this is one of the biggest reasons you shouldn't do it.
-
-
-Only invoke using Natives when you are building the following as they can only provide benefits in these situations:
-
-1. Class Systems
-2. Modular Extensions
-3. Game Engines (Beware of `Array` in this situation for performance)
-4. Complex Problems. (Think algorithms, machine learning, ai, modeling)
-
-===
-
-### Spaces or Tabs?
+#### Tabs and Spaces
 
 Ah. The age old argument. 
 
-_Use what everyone else in your group is using._
+1. _Use what everyone else in your group is using._
+2. If you are the only one, try out spaces.
 
-If it is just you, use spaces. Tabs have proven to me time and time again to be a pain to work with, on my system I set tabs to two space (this is also what I code in using spaces; I have more room for code on one line), on repositories I see my code at a four space tab, this can create confusion for not only you, but others.
+**Why not tabs?**
 
-#### What about line length?
+Tabs can be problematic when switching between environments, and different computers. This is also a benefit for them in some cases like large groups where many people have differing ideals and prefer different widths than others. Tabs can be set to a variable width in most editors making it very useful.
 
-Unless you are writing a man page, stay within your editor viewport.
+This feature though, can be a double-edged sword; What was once useful, when viewing code on a site such as github, you will always see the full tab width (`4` spaces). Which can creation confusion when someone who does not use full width tabs scans the code.
 
-Man pages, a good length is somewhere around 60 ~ 80.
+Spaces unlike tabs remain at a constant regardless of the system you put them on. Two spaces here will be two spaces everywhere.
 
-#### What about whitespace?
+**Why not spaces?**
 
-Good question, lets start with functions.
+Basically, the opposite of tabs. Being constant, this means if someone in your group prefers `3` space and you are using `2` space. Someone is going to lose the argument, and be a bit jaded. Granted, whoever is joining the group, should just follow the rules above to avoid argument.
+
+### Line Length
+
+A man once told me a page, on this page he said, stay within your editor viewport.
+
+1. For man pages, a good length is somewhere around 60 ~ 80.
+2. For all other things, word-wrap exists.
+
+### Code
+
+The final frontier, where many come to put stake, and many rest in peace.
+
+**Assignment**
+
+Even spaces, one space after `var` or `let`, one space after the assignment, no space before the final semicolon.
+
+```javascript
+var hello = "world";
+```
 
 **Functions**
 
@@ -106,13 +143,27 @@ I generally just make sure the comma is attached to the previous item:
 var example = [1, 2, "three"];
 ```
 
-===
+## Natives
 
-### Primitives
+Do not extend them, in the end you will only find trouble. This path is narrow and crumbles beneath the feet quickly. Use caution when treading.
+
+* I myself, many times before, have done this. I've learned from my mistakes that not everyone follows the age old rule of checking `hasOwnProperty` this is one of the biggest reasons you shouldn't do it.
+
+
+Only invoke using Natives when you are building the following as they can only provide benefits in these situations:
+
+1. Class Systems
+2. Modular Extensions
+3. Game Engines (Beware of `Array` in this situation for performance)
+4. Complex Problems. (Think algorithms, machine learning, ai, modeling)
+
+
+
+## Primitives
 
 Two types, `simple` and `complex`.
 
-##### Simple
+#### Simple
 
 Direct access.
 
@@ -131,7 +182,7 @@ two = 2;
 console.log(one, two); // 1, 2
 ```
 
-##### Complex
+#### Complex
 
 Reference access.
 
@@ -152,15 +203,13 @@ This can help you and be your worst enemy in certain situations.
 
 To understand more about why this happens read about allocation, pointers, and etc in other languages such as Java, C++, C, C# to get a notion of what is going on.
 
-===
-
-### Objects
+## Objects
 
 **Always remember:** No trailing commas, code can break when you do this in some compilers.
 
 If the thing you are building is not one of those above under the Natives list and is performance related, use `{}` over `Object`.
 
-```
+```javascript
 var example = {
   one: 1,
   two: 2
@@ -169,7 +218,7 @@ var example = {
 console.log(example.one);
 ```
 
-#### Notation
+### Notation
 
 **Use Bracket Notation:**
 
@@ -198,11 +247,9 @@ example.private;
 example['private'];
 ```
 
-====
+## Arrays
 
-### Arrays
-
-**Always remember:** No trailing commas, code can break when you do this in some compilers.
+**Always remember:** No trailing commas, code can break when you do this in some engines.
 
 If the thing you are building is not one of those above under the Natives list and is performance related, use `[]` over `Array`.
 
@@ -216,13 +263,11 @@ console.log(example[0]);
 
 Prefer native methods over complicated code. Such as `.push`, `.pop`, `.splice`, `.sort`, `.filter`, `.map` (where available; **node.js**), and `.slice`.
 
-#### Cloning
+### Cloning
 
 Use `.slice` over iteration.
 
-===
-
-### Strings
+## Strings
 
 Use `''` or `""` dependant on situation, just attempt to be consistent.
 
@@ -234,7 +279,7 @@ var name = "Joe Biden"; // Names can contain '
 var biography = "Wouldn't it make more sense to be logical, and rational rather than precise and perfect? Nothing is perfect. I make mistakes, I'm human. I am Joe Biden.";
 ```
 
-#### Multiline
+### Multiline
 
 Judgement call, the slowest known method is `[].join`. If you are building something that requires high performance __do not__ use `[].join`. It's not bad, it's just not performant.
 
@@ -254,9 +299,7 @@ var more_likely = "This is a super long error that was thrown because of Batman.
   "you would get nowhere fast.";
 ```
 
-===
-
-### Variables
+## Variables
 
 Always declare variables using `var`. Otherwise you're going to make a global, and pollute the namespace.
 
@@ -268,6 +311,7 @@ var four = function four () {
   return three + one;
 };
 ```
+
 Personally, I don't care how you set variables, the only rule of thumb I keep is the following:
 
 1. Assigned first, un-assigned last.
@@ -303,7 +347,7 @@ Should I know that those assignments will always happen later, I do single line,
 
 This only applies in my preference to un-assigned.
 
-#### Other Styles
+### Other Styles
 
 The first, is a common, in my opinion somewhat harder to scan list, when you are looking at it inside of code contextually; Without context it looks nice. The gap in the beginning causes visual problems for me personally when I start a block after it. Nesting and heirarchy get lost.
 
@@ -318,7 +362,7 @@ var one = 1,
     six;
 ```
 
-The following block, makes a little more sense, however it can be problematic with linting, and compilers. Notably older compilers. It gives you more of a visual seperation but you still lose sight of it quickly when inside context. Nesting and Heirarchy gets lost fast, just like the previous.
+The following block makes a little more sense, however it can be problematic with linting, and engines. Notably older ones. It gives you more of a visual seperation but you still lose sight of it quickly when inside context. Nesting and Heirarchy gets lost fast, just like the previous.
 
 ```javascript
 // Single var statement, multiple variables, comma before.
@@ -345,3 +389,4 @@ Things I have not glossed over, yet here are some quick snippets of information 
 5. **Blocks** (Don't create variables inside blocks as a general rule of thumb, unless performance. Generally, using braces _multi-line_ style is easier to read. Sometimes it's acceptable to ignore them.)
 6. **Functions** (When to var, when not to var. Always name them for logging sake.)
 7. **TOC** (Crowd pleasing, like free shirts at sport events)
+8. **Engines / Compilers** (There are many different ones, v8, rhino, etc.. They don't always interpret the same.)
