@@ -5,7 +5,7 @@
 
 ## Table of Contents
 
-1. [Freface](#foreword)
+1. [Foreword](#foreword)
 2. [General Tips](#general-tips)
 3. [Whitespace](#whitespace)
 	1. [Tabs and Spaces](#tabs-and-spaces)
