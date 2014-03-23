@@ -108,7 +108,7 @@ var example = [1, 2, "three"];
 
 ===
 
-### Primatives
+### Primitives
 
 Two types, `simple` and `complex`.
 
