@@ -393,5 +393,4 @@ Things I have not glossed over, yet here are some quick snippets of information 
 4. **Comments**. (Personal Findings: Doc-blocks are cool for generation, single line are great for annotation, amazing code doesn't need much inline comments.)
 5. **Blocks** (Don't create variables inside blocks as a general rule of thumb, unless performance. Generally, using braces _multi-line_ style is easier to read. Sometimes it's acceptable to ignore them.)
 6. **Functions** (When to var, when not to var. Always name them for logging sake.)
-7. **TOC** (Crowd pleasing, like free shirts at sport events)
 8. **Engines / Compilers** (There are many different ones, v8, rhino, etc.. They don't always interpret the same.)
