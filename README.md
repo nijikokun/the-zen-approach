@@ -125,11 +125,11 @@ This is for a few reasons, it's not because of preference:
 
 **Objects**
 
-One space after the property notation (`property:`)
+One space after the property notation (`"property":`)
 
 ```javascript
 var example = {
-  property: 'one'
+  "property": 'one'
 };
 ```
 
@@ -335,18 +335,20 @@ To understand more about why this happens read about allocation, pointers, and e
 
 ## Objects
 
-**Always remember:** No trailing commas, code can break when you do this in some compilers.
+**Always remember:** No trailing commas, for objects, this can break IE8 and earlier engines, also should you wish to port it to JSON it is not compatible.
 
 If the thing you are building is not one of those above under the Natives list and is performance related, use `{}` over `Object`.
 
 ```javascript
 var example = {
-  one: 1,
-  two: 2
+  "one": 1,
+  "two": 2
 };
 
 console.log(example.one);
 ```
+
+Side note, by encapsulating your properties with quotations you will avoid headaches should you require properties with special characters in the future. However modern editors will allow you to easily cure this using multi-line editing.
 
 ### Notation
 
@@ -366,7 +368,7 @@ If you use _reserved_ words on objects and attempt to access them through dot no
 
 ```javascript
 var example = {
-  private: function () {}
+  "private": function () {}
 };
 
 // Can and will, break in older browsers.
