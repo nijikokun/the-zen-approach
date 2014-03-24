@@ -169,10 +169,14 @@ In many cases you've encountered these and typed them a thousand times when doin
 
 ```javascript
 // this is not ended, and (should) throw an error.
-var errors, message = (errors ? "I forsee problems in your life." : "Everything is as clear as the blue sky"),
+var errors, message = (
+  errors ? "I forsee problems in your life." : "Everything is as clear as the blue sky"
+),
 
 // this however ends and should not throw an error.
-var errors, message = (errors ? "I forsee problems in your life." : "Everything is as clear as the blue sky")
+var errors, message = (
+  errors ? "I forsee problems in your life." : "Everything is as clear as the blue sky"
+)
 ```
 
 These are at the core the basics, of javascript. Let us continue onward.
