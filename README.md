@@ -60,9 +60,6 @@ After working so closely with this language, JavaScript, for so many years (goin
 3. Learn from your mistakes, however small or big, admit them; It's okay, we all make them.
 4. If it does not affect performance, or does not affect the outcome, it is aesthetic. 
    It cannot be right or wrong.
-5. No trailing commas in lists or dictionaries (hash).
-6. Use semi-colons, if only for your sanity.
-
 
 ## Whitespace
 
@@ -142,6 +139,137 @@ I generally just make sure the comma is attached to the previous item:
 ```javascript
 var example = [1, 2, "three"];
 ```
+
+## Semicolons
+
+Most likely the second largest debate, if not the largest, surrounding JavaScript / EcmaScript. There is the dark side, the one who purpetuates lies and fear, spreading illusion; evils; and fallacies regarding semicolon requirement. Then there is the good side, the one who spreads the facts; quotes the ASI rules; and provides a deeper, higher if you will, understanding of the JavaScript langauge.
+
+For a moment, walk with me, on the side of evil and good. As we explore those rules, so you can decide for yourself, whether you would like to live a life where you live a worry free life and use semicolons, or you live a life of understanding and worry free not using semicolons.
+
+How... can both sides... be worry free? Come with me my child, I shall tell you... nay, I shall _show_ you.
+
+### The Rules of ASI
+
+What is [ASI](http://people.mozilla.org/~jorendorff/es5.html#sec-7.9)? Automatic Semicolon Insertion. The true bearer of bad news for poorly written statements. However if you follow the rules, you will not be judged harshly by it's standards.
+
+Statement is terminated by `\n` unless:
+
+1. **Open-ended assignments** - The statement has an unclosed syntax character (`)`, `]`, and `}`), or ends in a way it usually does not, e.g. ending in (`.`, or `,`).
+2. **Open-ended blocks** - It's a `for`, `if`, `else`, `do`, or `while` statement without an opening brace (`{`).
+3. **Operator openings** - The next line begins with a special character (`.`, `,`, `*`, `+`, `-`, `/`, `?`, `:`, `[`, `(`) or another operator (e.g. binary operators) that is found between two tokens in a single expression.
+
+The judge is not so strict, but there are many cases where you can faulter. So let's explore them further.
+
+#### Open-ended Assignments
+
+In many cases you've encountered these and typed them a thousand times when doing Object Literals, Arrays, or ternary statements wrapped in parens (more on why there is this distinction here later).
+
+```javascript
+// this is not ended, and (should) throw an error.
+var errors, message = (errors ? "I forsee problems in your life." : "Everything is as clear as the blue sky"),
+
+// this however ends and should not throw an error.
+var errors, message = (errors ? "I forsee problems in your life." : "Everything is as clear as the blue sky")
+```
+
+These are at the core the basics, of javascript. Let us continue onward.
+
+#### Open-ended blocks
+
+These are regalded as one of the major annoyances, and praised as one the best features. Statements without braces.
+
+```javascript
+function check_authentication (user, callback) {
+  if (typeof user === 'function') 
+    callback = user, 
+    user = false;
+  
+  callback(!!user);
+}
+```
+
+Here, unlike the `function` statement, the `if` statement does not require braces, not only that we can do multiple assignments using the comma just as you could if you were instantianting them as variables.
+
+Following the rules, the following would be legal:
+
+```javascript
+function check_authentication (user, callback) {
+  if (typeof user === 'function') 
+    callback = user, 
+    user = false
+  
+  callback(!!user)
+}
+```
+
+The `if` statement will not have a semicolon inserted (`if (x)\ny()` is the same as `if (x) { y() }`), and following the previous rule, the `callback` assignment line will not have a semicolon inserted; Only the `user` line, and eventually the `callback` invoke line.
+
+#### Operator openings
+
+Lines that begin with an operator of some sort following a line that should have been terminated will cause the insertion to continue without inserting a semicolon.
+
+Here is an example:
+
+```javascript
+var error = false
+
+var message = error
+  ? "I forsee problems in your life." 
+  : "Everything is as clear as the blue sky"
+```
+
+Remember earlier when I stated that I would go further into detail as to why parens mattered on ternary statements regarding that rule? Well this rule will allow you to omit the parens and multiline ternary statements without fear of early termination.
+
+As a fair note, these openings will always regard the next token, not the prior. So things such as `i\n++\nj` can lead to problems as it will be interpreted as:
+
+```javascript
+i;
+++j;
+```
+
+Another edge case is when you invoke a method or function and immediately after use an operator without placing a semicolon before it or on the ending of your method which will cause the interpreter to continue and cause your code to break.
+
+```javascript
+methods()
+[1,2,3].forEach()
+
+// interprets as
+methods()[1,2,3].forEach();
+```
+
+To avoid this you can do a few things:
+
+```javascript
+// use semicolons
+methods();
+[1,2,3].forEach();
+
+// use a single semicolon before the operator
+methods()
+;[1,2,3].forEach()
+
+// the cleaner way is assignment, should you not want semicolons
+var arr = [1,2,3]
+methods()
+arr.forEach()
+```
+
+### Restrictive Production
+
+Restrictive productions will immediately add a newline after the following statements `break`, `return`, `throw`, `continue`, or postfix operators such as `--` and `++`. Thus doing things like this:
+
+```javascript
+return
+       7
+```
+
+Causes problems, a better example is a `for` inside of a `while` statement where you attempt to break the outer statement and you newlined the method name causing not the outer to break but the inner. Read more about this [here](http://inimino.org/~inimino/blog/javascript_semicolons).
+
+### Decisions
+
+So, now that you have learned, or hopefully have learned the rules, and certain scenarios that can trip you up, or give you headaches, it's up to you to decide your path. Take some time trying out both, write a few projects without semicolons, and a few with; See what you like more.
+
+Remember, when you are in a group, house rules ettiquete please.
 
 ## Natives
 
@@ -248,7 +376,7 @@ example['private'];
 
 ## Arrays
 
-**Always remember:** No trailing commas, code can break when you do this in some engines.
+**Always remember:** Trailing commas can lead to larger arrays than you expect, unless you are purposely requiring a longer length, don't use trailing commas.
 
 If the thing you are building is not one of those above under the Natives list and is performance related, use `[]` over `Array`.
 
