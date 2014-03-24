@@ -15,19 +15,22 @@
 		2. Functions
 		3. Objects
 		4. Arrays
-4. [Natives](#natives)
-5. [Primitives](#primitives)
+4. [Semicolons](#semicolons)
+	1. [The Rules of ASI](#the-rules-of-asi)
+	2. [Restrictive Productions](#restrictive-productions)
+5. [Natives](#natives)
+6. [Primitives](#primitives)
 	1. [Simple](#simple)
 	2. [Complex](#complex)
-6. [Objects](#objects)
+7. [Objects](#objects)
    1. [Notation](#notation)
-7. [Arrays](#arrays)
+8. [Arrays](#arrays)
    1. [Cloning](#cloning)
-8. [Strings](#strings)
+9. [Strings](#strings)
    1. [Multiline](#multiline)
-9. [Variables](#variables)
+10. [Variables](#variables)
    1. [Other Styles](#other-styles)
-10. [TODO](#todo)
+11. [TODO](#todo)
 	
 ===
 
@@ -254,7 +257,7 @@ methods()
 arr.forEach()
 ```
 
-### Restrictive Production
+### Restrictive Productions
 
 Restrictive productions will immediately add a newline after the following statements `break`, `return`, `throw`, `continue`, or postfix operators such as `--` and `++`. Thus doing things like this:
 
