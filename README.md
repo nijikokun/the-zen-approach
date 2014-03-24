@@ -61,7 +61,7 @@ After working so closely with this language, JavaScript, for so many years (goin
 1. Avoid things that are inherently bad, or cause performance problems.
 2. Find inspiration in the differences you have.
 3. Learn from your mistakes, however small or big, admit them; It's okay, we all make them.
-4. If it does not affect performance, or does not affect the outcome, it is aesthetic. 
+4. If it does not affect performance, obscures maintainability, or does not affect the outcome, it is aesthetic. 
    It cannot be right or wrong.
 
 ## Whitespace
