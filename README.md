@@ -524,4 +524,3 @@ Things I have not glossed over, yet here are some quick snippets of information 
 5. **Blocks** (Don't create variables inside blocks as a general rule of thumb, unless performance. Generally, using braces _multi-line_ style is easier to read. Sometimes it's acceptable to ignore them.)
 6. **Functions** (When to var, when not to var. Always name them for logging sake.)
 8. **Engines / Compilers** (There are many different ones, v8, rhino, etc.. They don't always interpret the same.)
-9. **Semicolons** (What is ASI? How can you avoid it? What are some things you should do (use semicolons! memorize ASI rules if you don't!)
