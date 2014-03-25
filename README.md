@@ -417,11 +417,13 @@ var biography = "Wouldn't it make more sense to be logical, and rational rather 
 
 ### Multiline
 
-Judgement call, the slowest known method is `[].join`. If you are building something that requires high performance (game engines, or code that will see high throughput) _do not_ use `[].join` (unless you are targeting IE7 and below). It's not bad, it's just not as performant as other methods. Unless, you are [appending to the dom](http://www.learningjquery.com/2009/03/43439-reasons-to-use-append-correctly/) and some [tests](http://jsperf.com/i-mjustsayin/2) to back this up.
+This section is dependant on what you are building. If you are building something that requires high performance (game engines, or code that will see high throughput) and do not manipulate the dom I would suggest you not use `[].join` unless you are targeting IE7 and below. It's not bad, it's just not as performant as other ways.
 
-The two fastest methods of multiline are one-line strings (no breaks), and in second using the `\` character (breaks), with `+` (concat) trailing slightly behind. [I'll let browser testing data back me up on this.](http://jsperf.com/ya-string-concat/10) (Note that this is done for JIT concurrently compiled code, not optimized code.)
+If you are [appending to the dom](http://www.learningjquery.com/2009/03/43439-reasons-to-use-append-correctly/) `[].join` happens to be the most performant and here are some [tests](http://jsperf.com/i-mjustsayin/2) to back this up.
 
-My personal preference is to use one line for performance (word-wrap exists people), and then `[].join` for non-performant things, like variables and such. Should the line require variables _and_ need to be performant I will use `+` concat notation.
+The two fastest methods of multiline are one-line strings (no breaks), and in second using the `\` character (breaks), with `+` (concat) trailing slightly behind. I'll let  [browser testing data](http://jsperf.com/ya-string-concat/10) back me up on this. (Note that this is done for JIT concurrently compiled code, not optimized code.)
+
+My personal preference is to use one line for performance (word-wrap exists people), and then `[].join` for non-performant things, like variables and such. Should the line require variables _and_ need to be performant I will use `+` concat notation. Unless I am doing DOM manipulation, in which case I use `[].join`.
 
 ```javascript
 var preferences = "This is a super long error that was thrown because of Batman. When you stop to think about how Batman had anything to do with this, you would get nowhere fast.";
