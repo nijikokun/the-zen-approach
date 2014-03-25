@@ -417,7 +417,7 @@ var biography = "Wouldn't it make more sense to be logical, and rational rather 
 
 ### Multiline
 
-Judgement call, the slowest known method is `[].join`. If you are building something that requires high performance (game engines, or code that will see high throughput) _do not_ use `[].join` (unless you are targeting IE7 and below). It's not bad, it's just not as performant as other methods. Unless, you are [appending to the dom](http://www.learningjquery.com/2009/03/43439-reasons-to-use-append-correctly/).
+Judgement call, the slowest known method is `[].join`. If you are building something that requires high performance (game engines, or code that will see high throughput) _do not_ use `[].join` (unless you are targeting IE7 and below). It's not bad, it's just not as performant as other methods. Unless, you are [appending to the dom](http://www.learningjquery.com/2009/03/43439-reasons-to-use-append-correctly/) and some [tests](http://jsperf.com/i-mjustsayin/2) to back this up.
 
 The two fastest methods of multiline are one-line strings (no breaks), and in second using the `\` character (breaks), with `+` (concat) trailing slightly behind. [I'll let browser testing data back me up on this.](http://jsperf.com/ya-string-concat/10) (Note that this is done for JIT concurrently compiled code, not optimized code.)
 
