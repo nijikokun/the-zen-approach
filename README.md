@@ -423,7 +423,7 @@ If you are [appending to the dom](http://www.learningjquery.com/2009/03/43439-re
 
 The two fastest methods of multiline are one-line strings (no breaks), and in second using the `\` character (breaks), with `+` (concat) trailing slightly behind. I'll let  [browser testing data](http://jsperf.com/ya-string-concat/10) back me up on this. (Note that this is done for JIT concurrently compiled code, not optimized code.)
 
-My personal preference is to use one line for performance (word-wrap exists people), and then `[].join` for non-performant things, like variables and such. Should the line require variables _and_ need to be performant I will use `+` concat notation. Unless I am doing DOM manipulation, in which case I use `[].join`.
+My personal preference is to use one line for performance (word-wrap exists people), and then `[].join` for code that doesn't need to be performant, especially when it comes to including variables, it's just a lot cleaner. Should the line require variables _and_ need to be performant I will use `+` concat notation. Unless I am doing DOM manipulation, in which case I use `[].join`.
 
 ```javascript
 var preferences = "This is a super long error that was thrown because of Batman. When you stop to think about how Batman had anything to do with this, you would get nowhere fast.";
