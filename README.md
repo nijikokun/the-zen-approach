@@ -417,9 +417,9 @@ var biography = "Wouldn't it make more sense to be logical, and rational rather 
 
 ### Multiline
 
-Judgement call, the slowest known method is `[].join`. If you are building something that requires high performance __do not__ use `[].join`. It's not bad, it's just not performant.
+Judgement call, the slowest known method is `[].join`. If you are building something that requires high performance (game engines, or code that will see high throughput) __do not__ use `[].join` (unless you are targeting IE7 and below). It's not bad, it's just not as performant as other methods.
 
-The two fastest methods of multiline are one-line strings (no breaks), and in second using the `\` character (breaks), with `+` (concat) trailing slightly behind. [I'll let hard data back me up on this.](http://jsperf.com/ya-string-concat/10)
+The two fastest methods of multiline are one-line strings (no breaks), and in second using the `\` character (breaks), with `+` (concat) trailing slightly behind. [I'll let browser testing data back me up on this.](http://jsperf.com/ya-string-concat/10) (Note that this is done for JIT concurrently compiled code, not optimized code.)
 
 My personal preference is to use one line for performance (word-wrap exists people), and then `[].join` for non-performant things, like variables and such. Should the line require variables _and_ need to be performant I will use `+` concat notation.
 
