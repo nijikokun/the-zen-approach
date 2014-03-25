@@ -417,7 +417,7 @@ var biography = "Wouldn't it make more sense to be logical, and rational rather 
 
 ### Multiline
 
-Judgement call, the slowest known method is `[].join`. If you are building something that requires high performance (game engines, or code that will see high throughput) __do not__ use `[].join` (unless you are targeting IE7 and below). It's not bad, it's just not as performant as other methods.
+Judgement call, the slowest known method is `[].join`. If you are building something that requires high performance (game engines, or code that will see high throughput) _do not_ use `[].join` (unless you are targeting IE7 and below). It's not bad, it's just not as performant as other methods.
 
 The two fastest methods of multiline are one-line strings (no breaks), and in second using the `\` character (breaks), with `+` (concat) trailing slightly behind. [I'll let browser testing data back me up on this.](http://jsperf.com/ya-string-concat/10) (Note that this is done for JIT concurrently compiled code, not optimized code.)
 
@@ -529,4 +529,4 @@ Things I have not glossed over, yet here are some quick snippets of information 
 4. **Comments**. (Personal Findings: Doc-blocks are cool for generation, single line are great for annotation, amazing code doesn't need much inline comments.)
 5. **Blocks** (Don't create variables inside blocks as a general rule of thumb, unless performance. Generally, using braces _multi-line_ style is easier to read. Sometimes it's acceptable to ignore them.)
 6. **Functions** (When to var, when not to var. Always name them for logging sake.)
-8. **Engines / Compilers** (There are many different ones, v8, rhino, etc.. They don't always interpret the same.)
+8. **Engines / Compilers** (There are many different ones, v8, rhino, etc.. They don't always interpret the same and they have many different modes: `concurrent` vs `optimized`)
