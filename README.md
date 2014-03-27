@@ -183,7 +183,7 @@ These are at the core the basics, of javascript. Let us continue onward.
 
 #### Open-ended blocks
 
-These are regalded as one of the major annoyances, and praised as one the best features. Statements without braces.
+These are regarded as one of the major annoyances, and praised as one the best features. Statements without braces.
 
 ```javascript
 function check_authentication (user, callback) {
