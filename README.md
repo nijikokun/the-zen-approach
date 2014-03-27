@@ -145,7 +145,7 @@ var example = [1, 2, "three"];
 
 ## Semicolons
 
-Most likely the second largest debate, if not the largest, surrounding JavaScript / EcmaScript. There is the dark side, the one who purpetuates lies and fear, spreading illusion; evils; and fallacies regarding semicolon requirement. Then there is the good side, the one who spreads the facts; quotes the ASI rules; and provides a deeper, higher if you will, understanding of the JavaScript langauge.
+Most likely the second largest debate, if not the largest, surrounding JavaScript / EcmaScript. There is the dark side, the one who purpetuates lies and fear, spreading illusion; evils; and fallacies regarding semicolon requirement. Then there is the good side, the one who spreads the facts; quotes the ASI rules; and provides a deeper, higher if you will, understanding of the JavaScript language.
 
 For a moment, walk with me, on the side of evil and good. As we explore those rules, so you can decide for yourself, whether you would like to live a life where you live a worry free life and use semicolons, or you live a life of understanding and worry free not using semicolons.
 
