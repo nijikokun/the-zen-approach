@@ -1,7 +1,5 @@
 # The Zen Approach
-#### *By Nijiko Yonskai*
-
-
+*By Nijiko Yonskai - Revision 28*
 
 ## Table of Contents
 
@@ -371,16 +369,20 @@ Side note, by encapsulating your properties with quotations you will avoid heada
 If you use _reserved_ words on objects and attempt to access them through dot notation, your code will not work in older versions of `IE`.
 
 ```javascript
+// Will break in older browsers such as IE
 var example = {
-  "private": function () {}
+  new: function () {}
 };
 
-// Can and will, break in older browsers.
-example.private;
+example.new;
 
 // Will work in older browsers.
 // Acceptable, in my opinion only for the three situations I mentioned earlier.
-example['private'];
+var example = {
+  "new": function () {}
+};
+
+example['new'];
 ```
 
 ## Arrays
