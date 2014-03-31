@@ -1,5 +1,5 @@
 # The Zen Approach
-*By Nijiko Yonskai - Revision 28*
+*By Nijiko Yonskai - Revision 29*
 
 ## Table of Contents
 
@@ -77,7 +77,7 @@ Ah. The age old argument.
 
 Tabs can be problematic when switching between environments, and different computers. This is also a benefit for them in some cases like large groups where many people have differing ideals and prefer different widths than others. Tabs can be set to a variable width in most editors making it very useful.
 
-This feature though, can be a double-edged sword; What was once useful, when viewing code on a site such as github, you will always see the full tab width (`4` spaces). Which can create confusion when those who does not use full tabs scan code in places other than their editor.
+This feature though, can be a double-edged sword; What was once useful, when viewing code on a site such as github, you will always see the full tab width (`4` spaces). Which can create confusion when those who do not use full tabs scan code in places other than their editor.
 
 Spaces unlike tabs remain at a constant regardless of the system you put them on. Two spaces here will be two spaces everywhere.
 
