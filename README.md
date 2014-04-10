@@ -151,7 +151,7 @@ How... can both sides... be worry free? Come with me my child, I shall tell you.
 
 ### The Rules of ASI
 
-What is [ASI](http://people.mozilla.org/~jorendorff/es5.html#sec-7.9)? Automatic Semicolon Insertion. The true bearer of bad news for poorly written statements. However if you follow the rules, you will not be judged harshly by it's standards.
+What is [ASI](http://people.mozilla.org/~jorendorff/es5.html#sec-7.9)? Automatic Semicolon Insertion. The true bearer of bad news for poorly written statements. However if you follow the rules, you will not be judged harshly by its standards.
 
 Statement is terminated by `\n` unless:
 
@@ -159,7 +159,7 @@ Statement is terminated by `\n` unless:
 2. **Open-ended blocks** - It's a `for`, `if`, `else`, `do`, or `while` statement without an opening brace (`{`).
 3. **Operator openings** - The next line begins with a special character (`.`, `,`, `*`, `+`, `-`, `/`, `?`, `:`, `[`, `(`) or another operator (e.g. binary operators) that is found between two tokens in a single expression.
 
-The judge is not so strict, but there are many cases where you can faulter. So let's explore them further.
+The judge is not so strict, but there are many cases where you can falter. So let's explore them further.
 
 #### Open-ended Assignments
 
